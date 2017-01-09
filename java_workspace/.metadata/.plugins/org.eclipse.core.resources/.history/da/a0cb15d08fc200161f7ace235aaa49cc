@@ -1,0 +1,53 @@
+package graph;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class DFS {
+	private int V;
+	private LinkedList<Integer> adj[];
+	boolean[] check ;
+	public DFS(int V) {
+		// TODO Auto-generated constructor stub
+		this.V = V;
+		adj = new LinkedList[V];
+		for(int i=0;i<V;i++){
+			adj[i] = new LinkedList<>();
+		}
+		check = new boolean[V];
+	}
+	void addEdge(int u,int v)
+	{
+		adj[u].add(v);
+	}
+	void trackDFS(int start)
+	{
+		//boolean[] check = new boolean[V];
+		LinkedList<Integer> queue = new LinkedList<>();
+		queue.add(start);
+		check[start]=true;
+		while(!queue.isEmpty())
+		{
+			int temp = queue.poll();
+			System.out.print(temp+" ");
+			Iterator<Integer> i = adj[temp].iterator();
+			while(i.hasNext())
+			{
+				trackDFS(i.next());
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DFS bfs = new DFS(4);
+		bfs.addEdge(0, 1);
+		bfs.addEdge(0, 2);
+		bfs.addEdge(1, 2);
+		bfs.addEdge(2, 0);
+		bfs.addEdge(2, 3);
+		bfs.addEdge(3, 3);
+		bfs.trackDFS(2);
+	}
+
+}

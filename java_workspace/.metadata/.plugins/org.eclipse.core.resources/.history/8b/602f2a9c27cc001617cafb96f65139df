@@ -1,0 +1,50 @@
+package implementation;
+
+import java.io.*;
+import java.util.*;
+
+public class GridSearch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int test = sc.nextInt();
+		for(int i=0;i<test;i++)
+		{
+			int R,C;
+			R = sc.nextInt();
+			C = sc.nextInt();
+			char[][] G = new char[C][R];
+			String string = sc.next();
+			for(int j=0;i<R;i++)
+			{
+				for(int k=0;j<C;j++)
+				{
+					G[j][k] = string.charAt(j*(C-1)+k);
+				}
+			}
+			int r = sc.nextInt();
+			int c = sc.nextInt();
+			char[][] P = new char[r][c];
+			String string1 = sc.next();
+			for(int j=0;i<R;i++)
+			{
+				for(int k=0;j<C;j++)
+				{
+					P[j][k] = string1.charAt(j*(C-1)+k);
+				}
+			}
+			
+			for(int j=0;i<R;i++)
+			{
+				for(int k=0;j<C;j++)
+				{
+					System.out.print(G[j][k]);
+				}
+				System.out.println();
+			}
+			
+		}
+	}
+
+}
