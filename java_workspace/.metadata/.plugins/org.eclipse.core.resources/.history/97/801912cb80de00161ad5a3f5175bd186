@@ -1,0 +1,60 @@
+package JanuaryChallenge2017;
+import java.util.*;
+
+public class Facinating {
+	static final HashMap<Double,Double> map = new HashMap<>();
+	//static int sas=0,ss;
+	// Function to print the divisors
+	static void printDivisors(double n)
+	{
+		double count = 0;
+	    // Note that this loop runs till square root
+	    for (double i=1; i<=Math.sqrt(n)+1; i++)
+	    {
+	        if (n%i==0)
+	        {
+	            // If divisors are equal, print only one
+	            if (n/i == i)
+	                count++;
+	 
+	            else // Otherwise print both
+	                count += 2;
+	        }
+	    }
+	    //System.out.println(count);
+	    double m =  Math.pow(n, count);
+	    map.put(m, n);
+	    //System.out.println(map.get(m));
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		for(int i=1;i<100;i++)
+		{
+			printDivisors(i);
+			System.out.println(map.get(i));
+		}
+		//System.out.println("Hello"+ sas+" "+ss);
+		Scanner s = new Scanner(System.in);
+		//map.put(1, 100);
+        int N = s.nextInt();
+        for(int i=0;i<100;i++)
+        {
+        	System.out.println(map.get(i));
+        }
+
+        /*for (int i = 0; i < N; i++) {
+            int X = s.nextInt();
+            if(map.get(X)!=null)
+            {
+            	System.out.println(map.get(X));
+            }
+            else{
+            	System.out.println("-1");
+            }
+            
+        }*/
+	}
+
+}

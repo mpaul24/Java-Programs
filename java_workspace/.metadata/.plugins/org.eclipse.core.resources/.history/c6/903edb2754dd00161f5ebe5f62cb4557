@@ -1,0 +1,27 @@
+package JanuaryChallenge2017;
+
+import java.util.Scanner;
+
+public class Daulat {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] array = new int[1000000000];
+		Scanner sc = new Scanner(System.in);
+		System.out.println(Integer.MAX_VALUE);
+		int test = sc.nextInt();
+		for(int tt=0;tt<test;tt++)
+		{
+			array[0] = sc.nextInt();
+			array[1] = sc.nextInt();
+			int N = sc.nextInt();
+			for(int i=2;i<=N;i++)
+			{
+				array[i] = array[i-1]+array[i-2]+array[i-1]*array[i-2];
+			}
+			System.out.println(array[N]);
+		}
+	}
+
+}
