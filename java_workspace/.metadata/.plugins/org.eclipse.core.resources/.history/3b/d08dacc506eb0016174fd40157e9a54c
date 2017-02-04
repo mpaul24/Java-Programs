@@ -1,0 +1,54 @@
+package codechef;
+
+import java.util.Scanner;
+
+public class CHEFBEST {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int test = sc.nextInt();
+		for(int tt=0;tt<test;tt++)
+		{
+			int n = sc.nextInt();
+			int[] array = new int[n];
+			for(int i=0;i<n;i++)
+			{
+				array[i] = sc.nextInt();
+			}
+			System.out.println(array[n-1]);
+			int count = 0;
+			int num = 0;
+			boolean start = false;
+			for(int i=0;i<n-1;i++)
+			{
+				if(!start){
+				if(array[i]==0) {
+					start = true;
+					if(array[i+1]==0)
+					count++;
+				}
+				}
+				else{
+					if(array[i]==1){
+						num += count+1;
+						count = 0;
+					}
+					else if(array[i]==0){
+						//System.out.println("Hello"+" "+array[i+1]);
+						if(array[i+1]==0) count++;
+					}
+				}
+			}
+			System.out.println(array[n]);
+			if(array[n-1]==1)
+			{
+				System.out.println("Hello"+" "+count);
+				num += count+1;
+				count = 0;
+			}
+			System.out.println(num);
+		}
+	}
+
+}
