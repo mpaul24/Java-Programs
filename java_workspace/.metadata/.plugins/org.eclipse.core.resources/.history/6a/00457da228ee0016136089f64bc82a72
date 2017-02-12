@@ -1,0 +1,47 @@
+package codechef;
+
+import java.util.Scanner;
+
+public class test {
+
+	
+	    
+	    public static void main(String args[] ){
+	        
+	        Scanner s = new Scanner(System.in);
+	        int N = s.nextInt();
+	        s.nextLine();
+	        for(int tt=0;tt<N;tt++)
+	        {
+	        	String x = s.nextLine();
+	        	int cases=0;
+	        	long a = Integer.parseInt(x.substring(5,x.length()));
+	        	System.out.println(a);
+	        	if(x.contains("Push"))
+	        		cases = 1;
+	        	else if(x.contains("Diff"))
+	        		cases = 2;
+	        	else if(x.contains("CountHigh"))
+	        		cases = 3;
+	        	else if(x.contains("CountLow"))
+	        		cases = 4;
+	        	
+	        	switch(cases)
+	        	{
+	        	case 1: 
+	        		long aa = Integer.parseInt(x.substring(5,x.length()-1));
+	        		break;
+	        	case 2:
+	        		break;
+	        	case 3:
+	        		break;
+	        		
+	        	case 4:
+	        		break;
+	        	}
+	        }
+	        
+	    }
+	}
+
+
